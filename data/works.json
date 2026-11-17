@@ -482,15 +482,9 @@
    "tag": "Ролик"
   },
   {
-   "src": "media/reels/claude.mp4",
-   "poster": "media/reels/claude.jpg",
-   "title": "Claude",
-   "tag": "Монтаж"
-  },
-  {
    "src": "media/reels/klod.mp4",
    "poster": "media/reels/klod.jpg",
-   "title": "Клод",
+   "title": "Как?",
    "tag": "Монтаж"
   },
   {
@@ -518,5 +512,5 @@
    "tag": "Моушн-дизайн"
   }
  ],
- "updated": "2026-11-17T18:08:10.637Z"
+ "updated": "2026-11-17T18:09:13.488Z"
 }
