@@ -38,11 +38,6 @@
      "tag": "Мокап"
     },
     {
-     "src": "media/elcorazon/mock_03.jpg",
-     "title": "Пакет",
-     "tag": "Мокап"
-    },
-    {
      "src": "media/elcorazon/mock_04.jpg",
      "title": "Канцелярия",
      "tag": "Мокап"
@@ -129,97 +124,6 @@
    ]
   },
   {
-   "id": "elcorazon-social",
-   "title": "El Corazon — соцсети",
-   "note": "Оформление ВКонтакте и Instagram: посты, обложки, иконки для актуальных историй и обучающая карусель.",
-   "layout": "grid",
-   "cols": 3,
-   "items": [
-    {
-     "slides": [
-      "media/elcorazon/stemp_1.jpg",
-      "media/elcorazon/stemp_2.jpg",
-      "media/elcorazon/stemp_3.jpg",
-      "media/elcorazon/stemp_4.jpg",
-      "media/elcorazon/stemp_5.jpg"
-     ],
-     "title": "Карусель «Стемпинг шаг за шагом»",
-     "tag": "Карусель"
-    },
-    {
-     "src": "media/elcorazon/vk_el_corazon_oblojka.jpg",
-     "title": "Обложка сообщества ВКонтакте",
-     "tag": "ВКонтакте"
-    },
-    {
-     "src": "media/elcorazon/vk_el_corazon_post_fashion_girl.jpg",
-     "title": "Пост «Fashion girl»",
-     "tag": "ВКонтакте"
-    },
-    {
-     "src": "media/elcorazon/vk_el_corazon_post_shimmer.jpg",
-     "title": "Пост «Shimmer»",
-     "tag": "ВКонтакте"
-    },
-    {
-     "src": "media/elcorazon/vk_el_corazon_post_kaleidoscope.jpg",
-     "title": "Пост «Kaleidoscope»",
-     "tag": "ВКонтакте"
-    },
-    {
-     "src": "media/elcorazon/vk_el_corazon_avatar.jpg",
-     "title": "Аватар",
-     "tag": "ВКонтакте"
-    },
-    {
-     "src": "media/elcorazon/vk_el_corazon_oblojka_video.jpg",
-     "title": "Обложка видео",
-     "tag": "ВКонтакте"
-    },
-    {
-     "src": "media/elcorazon/vk_el_corazon_oblojka_stati.jpg",
-     "title": "Обложка статьи",
-     "tag": "ВКонтакте"
-    },
-    {
-     "src": "media/elcorazon/vk_el_corazon_kartochka_tovara.jpg",
-     "title": "Карточка товара",
-     "tag": "ВКонтакте"
-    },
-    {
-     "src": "media/elcorazon/ig_post_kollekciya_gemstones_1080x1350.jpg",
-     "title": "Пост «Gemstones»",
-     "tag": "Instagram"
-    },
-    {
-     "src": "media/elcorazon/ig_post_nastroenie_nogot_1080x1350.jpg",
-     "title": "Пост «Цвет, который хочется показывать»",
-     "tag": "Instagram"
-    },
-    {
-     "src": "media/elcorazon/ig_post_nastroenie_rozovyj_1080x1350.jpg",
-     "title": "Пост «Нежность каждый день»",
-     "tag": "Instagram"
-    },
-    {
-     "slides": [
-      "media/elcorazon/hl_00.jpg",
-      "media/elcorazon/hl_01.jpg",
-      "media/elcorazon/hl_02.jpg",
-      "media/elcorazon/hl_03.jpg",
-      "media/elcorazon/hl_04.jpg",
-      "media/elcorazon/hl_05.jpg",
-      "media/elcorazon/hl_06.jpg",
-      "media/elcorazon/hl_07.jpg",
-      "media/elcorazon/hl_08.jpg",
-      "media/elcorazon/hl_09.jpg"
-     ],
-     "title": "Иконки для актуальных историй",
-     "tag": "Instagram"
-    }
-   ]
-  },
-  {
    "id": "nadezhda",
    "title": "МРОМ «Надежда»",
    "note": "Религиозная организация в Москве: листовки, плакаты к праздникам, X-баннеры, сертификаты, бланк и материалы волонтёрского движения ДЕМ.",
@@ -237,11 +141,6 @@
      "tag": "Полиграфия"
     },
     {
-     "src": "media/nadezhda/02.jpg",
-     "title": "Реклама курсов",
-     "tag": "Полиграфия"
-    },
-    {
      "src": "media/nadezhda/03.jpg",
      "title": "Плакат «Ыйык Кааба»",
      "tag": "Полиграфия"
@@ -254,11 +153,6 @@
     {
      "src": "media/nadezhda/05.jpg",
      "title": "Рамазан 2025 — фитр садакасы",
-     "tag": "Полиграфия"
-    },
-    {
-     "src": "media/nadezhda/06.jpg",
-     "title": "Марафон «Ясин 49 күндө»",
      "tag": "Полиграфия"
     },
     {
@@ -385,11 +279,6 @@
      "tag": "Баннер"
     },
     {
-     "src": "media/hira/02.jpg",
-     "title": "Логотип «Сарахси»",
-     "tag": "Логотип"
-    },
-    {
      "src": "media/hira/03.jpg",
      "title": "Фон с паттерном 2×2,5 м",
      "tag": "Баннер"
@@ -456,7 +345,7 @@
   },
   {
    "id": "bilal",
-   "title": "Билал мечити",
+   "title": "Билал мечити \"Пирложения\"",
    "note": "Логотип мечети: основная, горизонтальная и тёмная версии.",
    "layout": "grid",
    "cols": 3,
@@ -677,5 +566,6 @@
    "title": "El Corazon — заставка",
    "tag": "Моушн-дизайн"
   }
- ]
+ ],
+ "updated": "2026-11-17T18:06:57.119Z"
 }
