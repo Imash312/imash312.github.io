@@ -1,0 +1,681 @@
+{
+ "version": 1,
+ "projects": [
+  {
+   "id": "elcorazon-brand",
+   "title": "El Corazon — фирменный стиль",
+   "note": "Обновлённый логотип, брендбук и носители бренда косметики для ногтей: упаковка, визитки, каталог, этикетки, сайт.",
+   "layout": "grid",
+   "cols": 3,
+   "items": [
+    {
+     "slides": [
+      "media/elcorazon/logo_before.jpg",
+      "media/elcorazon/logo_after.jpg",
+      "media/elcorazon/logo_white.jpg"
+     ],
+     "title": "Логотип: было → стало",
+     "tag": "Логотип"
+    },
+    {
+     "src": "media/elcorazon/brandbook.jpg",
+     "title": "Брендбук",
+     "tag": "Брендбук"
+    },
+    {
+     "src": "media/elcorazon/presentation.jpg",
+     "title": "Шаблон презентации",
+     "tag": "Презентация"
+    },
+    {
+     "src": "media/elcorazon/mock_01.jpg",
+     "title": "Распаковка",
+     "tag": "Мокап"
+    },
+    {
+     "src": "media/elcorazon/mock_02.jpg",
+     "title": "Визитки",
+     "tag": "Мокап"
+    },
+    {
+     "src": "media/elcorazon/mock_03.jpg",
+     "title": "Пакет",
+     "tag": "Мокап"
+    },
+    {
+     "src": "media/elcorazon/mock_04.jpg",
+     "title": "Канцелярия",
+     "tag": "Мокап"
+    },
+    {
+     "src": "media/elcorazon/mock_05.jpg",
+     "title": "Каталог",
+     "tag": "Мокап"
+    },
+    {
+     "src": "media/elcorazon/mock_06.jpg",
+     "title": "Набор для стемпинга",
+     "tag": "Мокап"
+    },
+    {
+     "src": "media/elcorazon/mock_07.jpg",
+     "title": "Этикетка",
+     "tag": "Мокап"
+    },
+    {
+     "src": "media/elcorazon/mock_08.jpg",
+     "title": "Соцсети",
+     "tag": "Мокап"
+    },
+    {
+     "src": "media/elcorazon/mock_09.jpg",
+     "title": "Сайт",
+     "tag": "Мокап"
+    },
+    {
+     "src": "media/elcorazon/mock_10.jpg",
+     "title": "Большие форматы",
+     "tag": "Мокап"
+    }
+   ]
+  },
+  {
+   "id": "elcorazon-web",
+   "title": "El Corazon — сайт и рассылки",
+   "note": "Баннеры интернет-магазина, категории, превью для ссылок, шапка рассылки и подпись письма.",
+   "layout": "grid",
+   "cols": 3,
+   "items": [
+    {
+     "src": "media/elcorazon/site_hero_1920x600.jpg",
+     "title": "Главный баннер",
+     "tag": "Сайт"
+    },
+    {
+     "src": "media/elcorazon/site_kategoriya_gel_laki_600x400.jpg",
+     "title": "Категория «Гель-лаки»",
+     "tag": "Сайт"
+    },
+    {
+     "src": "media/elcorazon/site_kategoriya_stemping_600x400.jpg",
+     "title": "Категория «Стемпинг»",
+     "tag": "Сайт"
+    },
+    {
+     "src": "media/elcorazon/site_kategoriya_uhod_600x400.jpg",
+     "title": "Категория «Уход»",
+     "tag": "Сайт"
+    },
+    {
+     "src": "media/elcorazon/site_og_1200x630.jpg",
+     "title": "Превью для ссылок",
+     "tag": "Сайт"
+    },
+    {
+     "src": "media/elcorazon/site_promo_stemping_1200x300.jpg",
+     "title": "Промо-баннер",
+     "tag": "Сайт"
+    },
+    {
+     "src": "media/elcorazon/site_shapka_rassylki_1200x400.jpg",
+     "title": "Шапка рассылки",
+     "tag": "Сайт"
+    },
+    {
+     "src": "media/elcorazon/site_podpis_pisma_SHABLON_600x150.jpg",
+     "title": "Подпись письма",
+     "tag": "Сайт"
+    }
+   ]
+  },
+  {
+   "id": "elcorazon-social",
+   "title": "El Corazon — соцсети",
+   "note": "Оформление ВКонтакте и Instagram: посты, обложки, иконки для актуальных историй и обучающая карусель.",
+   "layout": "grid",
+   "cols": 3,
+   "items": [
+    {
+     "slides": [
+      "media/elcorazon/stemp_1.jpg",
+      "media/elcorazon/stemp_2.jpg",
+      "media/elcorazon/stemp_3.jpg",
+      "media/elcorazon/stemp_4.jpg",
+      "media/elcorazon/stemp_5.jpg"
+     ],
+     "title": "Карусель «Стемпинг шаг за шагом»",
+     "tag": "Карусель"
+    },
+    {
+     "src": "media/elcorazon/vk_el_corazon_oblojka.jpg",
+     "title": "Обложка сообщества ВКонтакте",
+     "tag": "ВКонтакте"
+    },
+    {
+     "src": "media/elcorazon/vk_el_corazon_post_fashion_girl.jpg",
+     "title": "Пост «Fashion girl»",
+     "tag": "ВКонтакте"
+    },
+    {
+     "src": "media/elcorazon/vk_el_corazon_post_shimmer.jpg",
+     "title": "Пост «Shimmer»",
+     "tag": "ВКонтакте"
+    },
+    {
+     "src": "media/elcorazon/vk_el_corazon_post_kaleidoscope.jpg",
+     "title": "Пост «Kaleidoscope»",
+     "tag": "ВКонтакте"
+    },
+    {
+     "src": "media/elcorazon/vk_el_corazon_avatar.jpg",
+     "title": "Аватар",
+     "tag": "ВКонтакте"
+    },
+    {
+     "src": "media/elcorazon/vk_el_corazon_oblojka_video.jpg",
+     "title": "Обложка видео",
+     "tag": "ВКонтакте"
+    },
+    {
+     "src": "media/elcorazon/vk_el_corazon_oblojka_stati.jpg",
+     "title": "Обложка статьи",
+     "tag": "ВКонтакте"
+    },
+    {
+     "src": "media/elcorazon/vk_el_corazon_kartochka_tovara.jpg",
+     "title": "Карточка товара",
+     "tag": "ВКонтакте"
+    },
+    {
+     "src": "media/elcorazon/ig_post_kollekciya_gemstones_1080x1350.jpg",
+     "title": "Пост «Gemstones»",
+     "tag": "Instagram"
+    },
+    {
+     "src": "media/elcorazon/ig_post_nastroenie_nogot_1080x1350.jpg",
+     "title": "Пост «Цвет, который хочется показывать»",
+     "tag": "Instagram"
+    },
+    {
+     "src": "media/elcorazon/ig_post_nastroenie_rozovyj_1080x1350.jpg",
+     "title": "Пост «Нежность каждый день»",
+     "tag": "Instagram"
+    },
+    {
+     "slides": [
+      "media/elcorazon/hl_00.jpg",
+      "media/elcorazon/hl_01.jpg",
+      "media/elcorazon/hl_02.jpg",
+      "media/elcorazon/hl_03.jpg",
+      "media/elcorazon/hl_04.jpg",
+      "media/elcorazon/hl_05.jpg",
+      "media/elcorazon/hl_06.jpg",
+      "media/elcorazon/hl_07.jpg",
+      "media/elcorazon/hl_08.jpg",
+      "media/elcorazon/hl_09.jpg"
+     ],
+     "title": "Иконки для актуальных историй",
+     "tag": "Instagram"
+    }
+   ]
+  },
+  {
+   "id": "nadezhda",
+   "title": "МРОМ «Надежда»",
+   "note": "Религиозная организация в Москве: листовки, плакаты к праздникам, X-баннеры, сертификаты, бланк и материалы волонтёрского движения ДЕМ.",
+   "layout": "grid",
+   "cols": 3,
+   "items": [
+    {
+     "src": "media/nadezhda/00.jpg",
+     "title": "Листовка",
+     "tag": "Полиграфия"
+    },
+    {
+     "src": "media/nadezhda/01.jpg",
+     "title": "Листовка 2024 — набор на курсы",
+     "tag": "Полиграфия"
+    },
+    {
+     "src": "media/nadezhda/02.jpg",
+     "title": "Реклама курсов",
+     "tag": "Полиграфия"
+    },
+    {
+     "src": "media/nadezhda/03.jpg",
+     "title": "Плакат «Ыйык Кааба»",
+     "tag": "Полиграфия"
+    },
+    {
+     "src": "media/nadezhda/04.jpg",
+     "title": "Открытка «Курман айт»",
+     "tag": "Полиграфия"
+    },
+    {
+     "src": "media/nadezhda/05.jpg",
+     "title": "Рамазан 2025 — фитр садакасы",
+     "tag": "Полиграфия"
+    },
+    {
+     "src": "media/nadezhda/06.jpg",
+     "title": "Марафон «Ясин 49 күндө»",
+     "tag": "Полиграфия"
+    },
+    {
+     "src": "media/nadezhda/07.jpg",
+     "title": "X-баннер",
+     "tag": "Полиграфия"
+    },
+    {
+     "src": "media/nadezhda/08.jpg",
+     "title": "X-баннер, вариант 2",
+     "tag": "Полиграфия"
+    },
+    {
+     "src": "media/nadezhda/09.jpg",
+     "title": "X-баннер волонтёрского движения ДЕМ",
+     "tag": "Полиграфия"
+    },
+    {
+     "src": "media/nadezhda/10.jpg",
+     "title": "Логотип ДЕМ на носителях",
+     "tag": "Полиграфия"
+    },
+    {
+     "src": "media/nadezhda/11.jpg",
+     "title": "Фирменный бланк",
+     "tag": "Полиграфия"
+    },
+    {
+     "src": "media/nadezhda/12.jpg",
+     "title": "Сертификат по Корану",
+     "tag": "Сертификат"
+    },
+    {
+     "src": "media/nadezhda/13.jpg",
+     "title": "Благодарственное письмо",
+     "tag": "Полиграфия"
+    },
+    {
+     "src": "media/nadezhda/14.jpg",
+     "title": "Благодарственное письмо, вариант 2",
+     "tag": "Полиграфия"
+    },
+    {
+     "src": "media/nadezhda/15.jpg",
+     "title": "Спортивный сертификат",
+     "tag": "Полиграфия"
+    }
+   ]
+  },
+  {
+   "id": "chelovechnost",
+   "title": "Благотворительный фонд «Человечность»",
+   "note": "Кайрымдуулук фонду: акция «Мээримдүү тыйын», баннеры, ящик для пожертвований, календари Рамадана, буклет и листовки.",
+   "layout": "grid",
+   "cols": 3,
+   "items": [
+    {
+     "src": "media/chelovechnost/00.jpg",
+     "title": "Буклет фонда",
+     "tag": "Фонд"
+    },
+    {
+     "src": "media/chelovechnost/01.jpg",
+     "title": "Листовка «Из калтыр жүрөгүндө нурун барда»",
+     "tag": "Фонд"
+    },
+    {
+     "src": "media/chelovechnost/02.jpg",
+     "title": "Баннер «Добрая копейка» 2×2,5 м",
+     "tag": "Фонд"
+    },
+    {
+     "src": "media/chelovechnost/03.jpg",
+     "title": "Баннер «Добрая копейка» 3,8×2,8 м",
+     "tag": "Фонд"
+    },
+    {
+     "src": "media/chelovechnost/04.jpg",
+     "title": "Плакат «Мээримдүү тыйын»",
+     "tag": "Фонд"
+    },
+    {
+     "src": "media/chelovechnost/05.jpg",
+     "title": "Ящик для пожертвований",
+     "tag": "Фонд"
+    },
+    {
+     "src": "media/chelovechnost/06.jpg",
+     "title": "Календарь Рамадан 2025",
+     "tag": "Фонд"
+    },
+    {
+     "src": "media/chelovechnost/07.jpg",
+     "title": "Календарь Рамадан 2026",
+     "tag": "Фонд"
+    },
+    {
+     "src": "media/chelovechnost/08.jpg",
+     "title": "Благодарственное письмо",
+     "tag": "Фонд"
+    },
+    {
+     "src": "media/chelovechnost/09.jpg",
+     "title": "Чехол 90×135 см",
+     "tag": "Фонд"
+    }
+   ]
+  },
+  {
+   "id": "hira",
+   "title": "Центр «Хира» и «Сарахси»",
+   "note": "Духовно-просветительский центр: логотипы, ролл-ап, баннер с фирменным паттерном.",
+   "layout": "grid",
+   "cols": 4,
+   "items": [
+    {
+     "src": "media/hira/00.jpg",
+     "title": "Логотип «Хира»",
+     "tag": "Логотип"
+    },
+    {
+     "src": "media/hira/01.jpg",
+     "title": "Ролл-ап «Хира»",
+     "tag": "Баннер"
+    },
+    {
+     "src": "media/hira/02.jpg",
+     "title": "Логотип «Сарахси»",
+     "tag": "Логотип"
+    },
+    {
+     "src": "media/hira/03.jpg",
+     "title": "Фон с паттерном 2×2,5 м",
+     "tag": "Баннер"
+    }
+   ]
+  },
+  {
+   "id": "kkc",
+   "title": "Кыргызский культурный центр",
+   "note": "Логотип и познавательные плакаты о кыргызской культуре: боз үй, орнаменты, традиции.",
+   "layout": "grid",
+   "cols": 4,
+   "items": [
+    {
+     "src": "media/kkc/00.jpg",
+     "title": "Логотип",
+     "tag": "Логотип"
+    },
+    {
+     "src": "media/kkc/01.jpg",
+     "title": "Плакат «Кыргыз боз үйү»",
+     "tag": "Плакат"
+    },
+    {
+     "src": "media/kkc/02.jpg",
+     "title": "Плакат «Устукан тартуу маданияты»",
+     "tag": "Плакат"
+    },
+    {
+     "src": "media/kkc/03.jpg",
+     "title": "Плакат «Кыргыз оймолору»",
+     "tag": "Плакат"
+    }
+   ]
+  },
+  {
+   "id": "mk",
+   "title": "МК Компьютер Сервис",
+   "note": "Четыре варианта логотипа для сервисного центра по ремонту компьютеров.",
+   "layout": "grid",
+   "cols": 4,
+   "items": [
+    {
+     "src": "media/mk/3.jpg",
+     "title": "МК Компьютер Сервис",
+     "tag": "Логотип"
+    },
+    {
+     "src": "media/mk/1.jpg",
+     "title": "МК Компьютер Сервис",
+     "tag": "Логотип"
+    },
+    {
+     "src": "media/mk/2.jpg",
+     "title": "МК Компьютер Сервис",
+     "tag": "Логотип"
+    },
+    {
+     "src": "media/mk/4.jpg",
+     "title": "МК Компьютер Сервис",
+     "tag": "Логотип"
+    }
+   ]
+  },
+  {
+   "id": "bilal",
+   "title": "Билал мечити",
+   "note": "Логотип мечети: основная, горизонтальная и тёмная версии.",
+   "layout": "grid",
+   "cols": 3,
+   "items": [
+    {
+     "src": "media/bilal/1.jpg",
+     "title": "Билал мечити",
+     "tag": "Логотип"
+    },
+    {
+     "src": "media/bilal/2.jpg",
+     "title": "Горизонтальная версия",
+     "tag": "Логотип"
+    },
+    {
+     "src": "media/bilal/3.jpg",
+     "title": "Тёмная версия",
+     "tag": "Логотип"
+    }
+   ]
+  },
+  {
+   "id": "other",
+   "title": "Другие клиенты",
+   "note": "Афиша презентации книги, визитка магазина аксессуаров, подарочный сертификат барбершопа, шапка YouTube-канала.",
+   "layout": "grid",
+   "cols": 4,
+   "items": [
+    {
+     "src": "media/other/afisha.jpg",
+     "title": "Афиша «Өзгөрүүнү өзүңдөн башта»",
+     "tag": "Афиша"
+    },
+    {
+     "src": "media/other/jamaat.jpg",
+     "title": "Визитка магазина «Jamaat»",
+     "tag": "Визитка"
+    },
+    {
+     "src": "media/other/barber.jpg",
+     "title": "Подарочный сертификат на стрижку",
+     "tag": "Сертификат"
+    },
+    {
+     "src": "media/other/meine_kuche.jpg",
+     "title": "Шапка YouTube «Meine Küche»",
+     "tag": "Баннер"
+    }
+   ]
+  },
+  {
+   "id": "insta",
+   "title": "Instagram @yman_nurkamalov",
+   "note": "Карусели с моим логотипом: посты для бизнеса о дизайне.",
+   "layout": "carousels",
+   "cols": 3,
+   "items": [
+    {
+     "title": "Что я делаю",
+     "tag": "Афиша, календарь, инфографика, логотип",
+     "slides": [
+      "media/insta/portfolio_1.jpg",
+      "media/insta/portfolio_2.jpg",
+      "media/insta/portfolio_3.jpg",
+      "media/insta/portfolio_4.jpg"
+     ]
+    },
+    {
+     "title": "Логотип «МЕН»",
+     "tag": "20 вариантов на тёмном и светлом фоне",
+     "slides": [
+      "media/insta/men_1.jpg",
+      "media/insta/men_2.jpg",
+      "media/insta/men_3.jpg",
+      "media/insta/men_4.jpg"
+     ]
+    },
+    {
+     "title": "Бренд «Бибип»",
+     "tag": "Логотип, приложение, баннер, визитка",
+     "slides": [
+      "media/insta/bibip_1.jpg",
+      "media/insta/bibip_2.jpg",
+      "media/insta/bibip_3.jpg",
+      "media/insta/bibip_4.jpg",
+      "media/insta/bibip_5.jpg",
+      "media/insta/bibip_6.jpg"
+     ]
+    },
+    {
+     "title": "5 ошибок в логотипе",
+     "tag": "Как проверить свой логотип",
+     "slides": [
+      "media/insta/logo_1.jpg",
+      "media/insta/logo_2.jpg",
+      "media/insta/logo_3.jpg",
+      "media/insta/logo_4.jpg",
+      "media/insta/logo_5.jpg",
+      "media/insta/logo_6.jpg",
+      "media/insta/logo_7.jpg"
+     ]
+    },
+    {
+     "title": "Какие шрифты сочетаются",
+     "tag": "Пары шрифтов для бизнеса",
+     "slides": [
+      "media/insta/fonts_1.jpg",
+      "media/insta/fonts_2.jpg",
+      "media/insta/fonts_3.jpg",
+      "media/insta/fonts_4.jpg",
+      "media/insta/fonts_5.jpg",
+      "media/insta/fonts_6.jpg"
+     ]
+    },
+    {
+     "title": "Цвет для бизнеса",
+     "tag": "Психология цвета, правило 60-30-10",
+     "slides": [
+      "media/insta/colors_1.jpg",
+      "media/insta/colors_2.jpg",
+      "media/insta/colors_3.jpg",
+      "media/insta/colors_4.jpg",
+      "media/insta/colors_5.jpg",
+      "media/insta/colors_6.jpg"
+     ]
+    },
+    {
+     "title": "8 готовых палитр",
+     "tag": "HEX-коды для разных сфер",
+     "slides": [
+      "media/insta/palettes_1.jpg",
+      "media/insta/palettes_2.jpg",
+      "media/insta/palettes_3.jpg",
+      "media/insta/palettes_4.jpg",
+      "media/insta/palettes_5.jpg",
+      "media/insta/palettes_6.jpg"
+     ]
+    },
+    {
+     "title": "Инфографика для маркетплейса",
+     "tag": "Фото товара, цвета, шрифты, текст",
+     "slides": [
+      "media/insta/market_1.jpg",
+      "media/insta/market_2.jpg",
+      "media/insta/market_3.jpg",
+      "media/insta/market_4.jpg",
+      "media/insta/market_5.jpg",
+      "media/insta/market_6.jpg"
+     ]
+    }
+   ]
+  }
+ ],
+ "reels": [
+  {
+   "src": "media/reels/shamal-taxi.mp4",
+   "poster": "media/reels/shamal-taxi.jpg",
+   "title": "Шамал такси",
+   "tag": "Реклама приложения"
+  },
+  {
+   "src": "media/reels/shamaldy-sai.mp4",
+   "poster": "media/reels/shamaldy-sai.jpg",
+   "title": "Шамалды-Сай",
+   "tag": "Реклама"
+  },
+  {
+   "src": "media/reels/ozum.mp4",
+   "poster": "media/reels/ozum.jpg",
+   "title": "Өзүм",
+   "tag": "Реклама"
+  },
+  {
+   "src": "media/reels/kuduk.mp4",
+   "poster": "media/reels/kuduk.jpg",
+   "title": "Кудук",
+   "tag": "Анимация"
+  },
+  {
+   "src": "media/reels/perishteler.mp4",
+   "poster": "media/reels/perishteler.jpg",
+   "title": "Периштелер",
+   "tag": "Ролик"
+  },
+  {
+   "src": "media/reels/claude.mp4",
+   "poster": "media/reels/claude.jpg",
+   "title": "Claude",
+   "tag": "Монтаж"
+  },
+  {
+   "src": "media/reels/klod.mp4",
+   "poster": "media/reels/klod.jpg",
+   "title": "Клод",
+   "tag": "Монтаж"
+  },
+  {
+   "src": "media/reels/kitep.mp4",
+   "poster": "media/reels/kitep.jpg",
+   "title": "Презентация книги",
+   "tag": "Моушн-дизайн"
+  },
+  {
+   "src": "media/reels/chelovechnost.mp4",
+   "poster": "media/reels/chelovechnost.jpg",
+   "title": "Фонд «Человечность»",
+   "tag": "Монтаж"
+  },
+  {
+   "src": "media/reels/meerimduu.mp4",
+   "poster": "media/reels/meerimduu.jpg",
+   "title": "«Мээримдүү тыйын»",
+   "tag": "Анимация"
+  },
+  {
+   "src": "media/reels/elcorazon.mp4",
+   "poster": "media/reels/elcorazon.jpg",
+   "title": "El Corazon — заставка",
+   "tag": "Моушн-дизайн"
+  }
+ ]
+}

@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex,nofollow">
+<title>Админка — портфолио</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+:root{--ink:#0a0a0a;--ink-2:#141414;--ink-3:#1c1c1c;--line:#2a2a2a;--paper:#fff;--mute:#a3a3a3;--flame:#F49523;--bad:#ef5b4c;--ok:#4cc38a;
+  --display:"Unbounded","Arial Black",system-ui,sans-serif;--body:"Manrope",system-ui,-apple-system,"Segoe UI",sans-serif;--leaf:20px 5px 20px 5px;color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--ink);color:var(--paper);font:15px/1.5 var(--body);-webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+h1,h2,h3{font-family:var(--display);margin:0;line-height:1.15}
+a{color:var(--flame)}
+input,textarea,select{font:inherit;color:var(--paper);background:var(--ink);border:1px solid var(--line);border-radius:10px;padding:9px 11px;width:100%;min-width:0}
+input:focus,textarea:focus,select:focus{outline:2px solid var(--flame);outline-offset:1px;border-color:transparent}
+textarea{resize:vertical;min-height:56px}
+label{display:flex;flex-direction:column;gap:5px;font-size:12px;font-weight:700;color:var(--mute);letter-spacing:.04em;text-transform:uppercase}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;cursor:pointer;font:700 14px/1 var(--body);text-decoration:none;color:#0a0a0a;background:var(--flame);padding:12px 18px;border-radius:var(--leaf);transition:transform .2s,box-shadow .2s,border-radius .3s;white-space:nowrap}
+.btn:hover{transform:translateY(-1px);box-shadow:0 8px 24px -8px rgba(244,149,35,.6);border-radius:5px 20px 5px 20px}
+.btn:disabled{opacity:.45;cursor:not-allowed;transform:none;box-shadow:none}
+.btn.ghost{background:transparent;color:var(--paper);box-shadow:inset 0 0 0 1.5px var(--line)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 1.5px var(--flame);color:var(--flame)}
+.btn.sm{padding:8px 12px;font-size:13px}
+.btn.icon{padding:7px 10px;font-size:14px;min-width:34px}
+.btn.danger{background:transparent;color:var(--bad);box-shadow:inset 0 0 0 1.5px #4a2420}
+.btn.danger:hover{box-shadow:inset 0 0 0 1.5px var(--bad)}
+.top{position:sticky;top:0;z-index:20;background:rgba(10,10,10,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.top .wrap{display:flex;align-items:center;gap:12px;flex-wrap:wrap;padding-block:12px}
+.top .brand{display:flex;align-items:center;gap:10px;font-family:var(--display);font-size:15px;margin-right:auto}
+.top img{width:34px;height:34px}
+.status{font-size:13px;color:var(--mute)}
+.status.dirty{color:var(--flame);font-weight:700}
+.tabs{display:flex;gap:6px;margin:22px 0 18px;flex-wrap:wrap}
+.tab{border:0;cursor:pointer;font:600 14px var(--body);padding:10px 16px;border-radius:var(--leaf);background:var(--ink-2);color:var(--mute);box-shadow:inset 0 0 0 1px var(--line)}
+.tab[aria-selected="true"]{background:var(--flame);color:#0a0a0a;box-shadow:none}
+.panel{background:var(--ink-2);border:1px solid var(--line);border-radius:18px;padding:18px;margin-bottom:16px}
+.login{max-width:520px;margin:48px auto}
+.login .panel{display:flex;flex-direction:column;gap:14px;padding:24px}
+.login ol{margin:0;padding-left:20px;color:#d4d4d4;font-size:14px}
+.login ol li{margin-bottom:6px}
+.err{color:var(--bad);font-size:14px;min-height:1em}
+.proj-top{display:grid;grid-template-columns:1fr 150px 110px auto;gap:10px;align-items:end}
+.proj-top .acts{display:flex;gap:6px}
+.proj .note{margin-top:10px}
+.items{display:grid;grid-template-columns:repeat(auto-fill,minmax(170px,1fr));gap:12px;margin-top:14px}
+.item{background:var(--ink);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column;min-width:0}
+.item .thumb{position:relative;aspect-ratio:1;background:#000;overflow:hidden}
+.item .thumb img,.item .thumb video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.item .badge{position:absolute;top:6px;left:6px;background:rgba(10,10,10,.85);font-size:11px;font-weight:700;padding:3px 7px;border-radius:8px}
+.item .badge.new{left:auto;right:6px;background:var(--flame);color:#0a0a0a}
+.item .fields{padding:8px;display:flex;flex-direction:column;gap:6px}
+.item .fields input{padding:6px 8px;font-size:13px}
+.item .row{display:flex;gap:4px;justify-content:space-between}
+.add-row{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}
+.reels{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.reel .thumb{aspect-ratio:9/16}
+.drop{border:1.5px dashed var(--line);border-radius:16px;padding:28px;text-align:center;color:var(--mute)}
+.progress{height:8px;background:var(--ink);border-radius:8px;overflow:hidden;margin-top:12px}
+.progress i{display:block;height:100%;width:0;background:var(--flame);transition:width .2s}
+.log{font-size:13px;color:var(--mute);margin-top:8px;white-space:pre-wrap;max-height:180px;overflow:auto}
+.hint{font-size:13px;color:var(--mute)}
+.toast{position:fixed;left:50%;bottom:calc(20px + env(safe-area-inset-bottom,0px));transform:translate(-50%,30px);opacity:0;background:var(--flame);color:#0a0a0a;font-weight:700;padding:12px 18px;border-radius:var(--leaf);transition:all .3s;z-index:60;pointer-events:none;max-width:90vw}
+.toast.on{transform:translate(-50%,0);opacity:1}
+.toast.bad{background:var(--bad);color:#fff}
+dialog{border:0;border-radius:18px;background:var(--ink-2);color:var(--paper);padding:22px;max-width:min(460px,92vw);box-shadow:0 0 0 1px var(--line)}
+dialog::backdrop{background:rgba(0,0,0,.7)}
+dialog .acts{display:flex;gap:8px;justify-content:flex-end;margin-top:18px}
+[hidden]{display:none!important}
+@media (max-width:700px){
+  .proj-top{grid-template-columns:1fr 1fr}
+  .proj-top label:first-child{grid-column:1/-1}
+  .proj-top .acts{grid-column:1/-1;justify-content:flex-end}
+  .items{grid-template-columns:repeat(2,1fr)}
+  .reels{grid-template-columns:repeat(2,1fr)}
+  .top .btn{padding:10px 12px;font-size:13px}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <div class="brand"><img src="img/logo-dark.png" alt="">Админка портфолио</div>
+    <span class="status" id="status" hidden></span>
+    <a class="btn ghost sm" id="siteLink" href="./" target="_blank" rel="noopener" hidden>Открыть сайт</a>
+    <button class="btn sm" type="button" id="saveBtn" hidden disabled>Сохранить и опубликовать</button>
+    <button class="btn ghost sm" type="button" id="logoutBtn" hidden>Выйти</button>
+  </div>
+</header>
+
+<main class="wrap">
+  <!-- LOGIN -->
+  <section class="login" id="login">
+    <h1 style="font-size:26px;margin-bottom:16px">Вход в админку</h1>
+    <div class="panel">
+      <p class="hint" style="margin:0">Админка сохраняет изменения прямо в ваш репозиторий на GitHub. Для входа нужен личный ключ доступа (token). Он хранится только в этом браузере.</p>
+      <label>Пользователь GitHub<input id="owner" value="Imash312" autocomplete="username"></label>
+      <label>Репозиторий<input id="repo" value="imash312.github.io"></label>
+      <label>Ключ доступа (token)<input id="token" type="password" autocomplete="off" placeholder="github_pat_…"></label>
+      <div class="err" id="loginErr" role="alert"></div>
+      <button class="btn" type="button" id="loginBtn">Войти</button>
+      <details>
+        <summary class="hint" style="cursor:pointer">Как получить ключ доступа (один раз)</summary>
+        <ol style="margin-top:10px">
+          <li>Откройте <a href="https://github.com/settings/personal-access-tokens/new" target="_blank" rel="noopener">github.com/settings/personal-access-tokens/new</a>.</li>
+          <li><b>Token name</b>: «Портфолио админка». <b>Expiration</b>: срок по желанию.</li>
+          <li><b>Repository access</b> → <b>Only select repositories</b> → выберите <b>imash312.github.io</b>.</li>
+          <li><b>Permissions</b> → <b>Repository permissions</b> → <b>Contents</b> → <b>Read and write</b>.</li>
+          <li>Нажмите <b>Generate token</b>, скопируйте ключ и вставьте сюда.</li>
+        </ol>
+      </details>
+    </div>
+  </section>
+
+  <!-- EDITOR -->
+  <section id="editor" hidden>
+    <div class="tabs" role="tablist">
+      <button class="tab" role="tab" type="button" data-tab="works" aria-selected="true">Работы</button>
+      <button class="tab" role="tab" type="button" data-tab="reels" aria-selected="false">Видео</button>
+      <button class="tab" role="tab" type="button" data-tab="bulk" aria-selected="false">Загрузить весь сайт</button>
+    </div>
+
+    <div data-pane="works">
+      <div id="projects"></div>
+      <button class="btn ghost" type="button" id="addProject">+ Новый проект</button>
+    </div>
+
+    <div data-pane="reels" hidden>
+      <div class="panel">
+        <p class="hint" style="margin-top:0">Короткие ролики для блока «Рекламные ролики». Лучше всего вертикальное видео до 15 секунд и до 20 МБ — оно крутится без звука.</p>
+        <div class="reels" id="reels"></div>
+        <div class="add-row"><label class="btn" style="flex-direction:row;text-transform:none;letter-spacing:0;font-size:14px;color:#0a0a0a">+ Добавить видео<input type="file" accept="video/mp4,video/quicktime,video/webm" id="reelInput" hidden multiple></label></div>
+      </div>
+    </div>
+
+    <div data-pane="bulk" hidden>
+      <div class="panel">
+        <h3 style="font-size:18px;margin-bottom:8px">Загрузить весь сайт из папки</h3>
+        <p class="hint">Выберите папку сайта на компьютере (например, <b>site</b> на рабочем столе). Все файлы из неё будут загружены в репозиторий одним коммитом с сохранением путей. Используйте это для первой загрузки или чтобы заменить сайт целиком.</p>
+        <div class="drop">
+          <label class="btn" style="flex-direction:row;text-transform:none;letter-spacing:0;font-size:14px;color:#0a0a0a;display:inline-flex">Выбрать папку<input type="file" id="dirInput" webkitdirectory directory multiple hidden></label>
+          <p class="hint" id="dirInfo" style="margin:12px 0 0">Папка не выбрана</p>
+        </div>
+        <div class="add-row"><button class="btn" type="button" id="bulkBtn" disabled>Загрузить на GitHub</button></div>
+      </div>
+    </div>
+
+    <div class="panel" id="progressBox" hidden>
+      <b id="progressTitle">Публикация…</b>
+      <div class="progress"><i id="bar"></i></div>
+      <div class="log" id="log"></div>
+    </div>
+  </section>
+</main>
+
+<dialog id="confirmDlg"><p id="confirmText" style="margin:0"></p><div class="acts"><button class="btn ghost sm" type="button" value="no">Отмена</button><button class="btn sm" type="button" value="yes">Да</button></div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script>
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const API='https://api.github.com';
+const DATA_PATH='data/works.json';
+let CFG={owner:'',repo:'',branch:'main',token:''};
+let DATA=null;           // works.json being edited
+let PENDING=new Map();   // path -> {blob, url}
+let dirty=false;
+
+/* ---------- small UI helpers ---------- */
+function toast(t,bad){const el=$('#toast');el.textContent=t;el.classList.toggle('bad',!!bad);el.classList.add('on');clearTimeout(toast.t);toast.t=setTimeout(()=>el.classList.remove('on'),3200)}
+function setDirty(v){dirty=v;const s=$('#status');s.hidden=false;s.textContent=v?'Есть несохранённые изменения':'Все изменения опубликованы';s.classList.toggle('dirty',v);$('#saveBtn').disabled=!v}
+function confirmBox(text){return new Promise(res=>{const d=$('#confirmDlg');$('#confirmText').textContent=text;d.showModal();d.querySelectorAll('button').forEach(b=>b.onclick=()=>{d.close();res(b.value==='yes')})})}
+function store(){try{localStorage.setItem('pf_admin',JSON.stringify(CFG))}catch(e){}}
+function loadStore(){try{return JSON.parse(localStorage.getItem('pf_admin')||'null')}catch(e){return null}}
+const slug=s=>(s||'').toLowerCase().replace(/[^a-z0-9а-яёөүң]+/gi,'-').replace(/^-|-$/g,'').slice(0,40)||'project';
+const translit=s=>{const m={а:'a',б:'b',в:'v',г:'g',д:'d',е:'e',ё:'e',ж:'zh',з:'z',и:'i',й:'y',к:'k',л:'l',м:'m',н:'n',о:'o',п:'p',р:'r',с:'s',т:'t',у:'u',ф:'f',х:'h',ц:'c',ч:'ch',ш:'sh',щ:'sh',ъ:'',ы:'y',ь:'',э:'e',ю:'yu',я:'ya',ө:'o',ү:'u',ң:'n'};return slug(s).split('').map(c=>m[c]??c).join('').replace(/[^a-z0-9-]/g,'')||'project'};
+const uid=()=>Date.now().toString(36)+Math.random().toString(36).slice(2,6);
+const imgURL=p=>PENDING.has(p)?PENDING.get(p).url:p;
+const fileTitle=n=>n.replace(/\.[^.]+$/,'').replace(/[_]+/g,' ').trim();
+
+/* ---------- GitHub API ---------- */
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function gh(path,opt={},tries=0){
+  const r=await fetch(API+path,{...opt,headers:{'Accept':'application/vnd.github+json','Authorization':'Bearer '+CFG.token,'X-GitHub-Api-Version':'2022-11-28',...(opt.body?{'Content-Type':'application/json'}:{}),...(opt.headers||{})}});
+  if(!r.ok){
+    let m='';try{m=(await r.json()).message||''}catch(e){}
+    const limited=r.status===429||(r.status===403&&/rate limit/i.test(m));
+    if(limited&&tries<6){const wait=(+r.headers.get('retry-after')||60)*1000;logLine&&logLine('GitHub просит подождать '+Math.round(wait/1000)+' сек…');await sleep(wait);return gh(path,opt,tries+1)}
+    if(r.status>=500&&tries<3){await sleep(3000);return gh(path,opt,tries+1)}
+    const err=new Error(m||('HTTP '+r.status));err.status=r.status;throw err}
+  return r.status===204?null:r.json();
+}
+const repoPath=()=>`/repos/${CFG.owner}/${CFG.repo}`;
+function b64FromBlob(blob){return new Promise((res,rej)=>{const fr=new FileReader();fr.onload=()=>res(String(fr.result).split(',')[1]);fr.onerror=rej;fr.readAsDataURL(blob)})}
+function b64FromText(t){return btoa(unescape(encodeURIComponent(t)))}
+async function commit(files,message,onProgress){
+  // files: [{path, base64}]
+  const ref=await gh(`${repoPath()}/git/ref/heads/${CFG.branch}`);
+  const base=await gh(`${repoPath()}/git/commits/${ref.object.sha}`);
+  const tree=[];let i=0;
+  for(const f of files){
+    const blob=await gh(`${repoPath()}/git/blobs`,{method:'POST',body:JSON.stringify({content:f.base64,encoding:'base64'})});
+    tree.push({path:f.path,mode:'100644',type:'blob',sha:blob.sha});
+    onProgress&&onProgress(++i,files.length,f.path);
+    if(files.length>30)await sleep(700); // stay under GitHub's limit for rapid uploads
+  }
+  const t=await gh(`${repoPath()}/git/trees`,{method:'POST',body:JSON.stringify({base_tree:base.tree.sha,tree})});
+  const c=await gh(`${repoPath()}/git/commits`,{method:'POST',body:JSON.stringify({message,tree:t.sha,parents:[ref.object.sha]})});
+  await gh(`${repoPath()}/git/refs/heads/${CFG.branch}`,{method:'PATCH',body:JSON.stringify({sha:c.sha})});
+  return c.sha;
+}
+async function loadData(){
+  try{
+    const r=await fetch(API+`${repoPath()}/contents/${DATA_PATH}?ref=${CFG.branch}&t=${Date.now()}`,{headers:{'Accept':'application/vnd.github.raw+json','Authorization':'Bearer '+CFG.token}});
+    if(r.status===404)return {version:1,projects:[],reels:[]};
+    if(!r.ok)throw new Error('HTTP '+r.status);
+    return await r.json();
+  }catch(e){throw e}
+}
+
+/* ---------- login ---------- */
+async function login(){
+  CFG.owner=$('#owner').value.trim();CFG.repo=$('#repo').value.trim();CFG.token=$('#token').value.trim()||CFG.token;
+  $('#loginErr').textContent='';
+  if(!CFG.owner||!CFG.repo||!CFG.token){$('#loginErr').textContent='Заполните все поля.';return}
+  $('#loginBtn').disabled=true;$('#loginBtn').textContent='Проверяю…';
+  try{
+    const info=await gh(repoPath());
+    if(info.permissions&&!info.permissions.push)throw new Error('У ключа нет права записи. Включите Contents: Read and write.');
+    CFG.branch=info.default_branch||'main';
+    DATA=await loadData();
+    store();
+    $('#login').hidden=true;$('#editor').hidden=false;['#saveBtn','#logoutBtn','#siteLink'].forEach(s=>$(s).hidden=false);
+    $('#siteLink').href=`https://${CFG.owner.toLowerCase()}.github.io/${CFG.repo.toLowerCase()===CFG.owner.toLowerCase()+'.github.io'?'':CFG.repo+'/'}`;
+    setDirty(false);renderAll();
+  }catch(e){
+    $('#loginErr').textContent=e.status===401?'Ключ не подходит или устарел.':e.status===404?'Репозиторий не найден или у ключа нет к нему доступа.':'Ошибка: '+e.message;
+  }finally{$('#loginBtn').disabled=false;$('#loginBtn').textContent='Войти'}
+}
+$('#loginBtn').onclick=login;
+$('#token').addEventListener('keydown',e=>{if(e.key==='Enter')login()});
+$('#logoutBtn').onclick=async()=>{if(dirty&&!await confirmBox('Есть несохранённые изменения. Всё равно выйти?'))return;try{localStorage.removeItem('pf_admin')}catch(e){}location.reload()};
+if(location.hash==='#demo'){fetch(DATA_PATH+'?t='+Date.now()).then(r=>r.json()).then(d=>{DATA=d;$('#login').hidden=true;$('#editor').hidden=false;$('#saveBtn').hidden=false;setDirty(false);$('#status').textContent='Демо-режим: сохранение отключено';renderAll();$('#saveBtn').onclick=()=>toast('В демо-режиме сохранение отключено. Войдите с ключом.',true)})}
+else{const saved=loadStore();if(saved){CFG={...CFG,...saved};$('#owner').value=CFG.owner;$('#repo').value=CFG.repo;if(CFG.token){$('#token').placeholder='Ключ сохранён в этом браузере';login()}}}
+
+/* ---------- tabs ---------- */
+document.querySelectorAll('.tab').forEach(t=>t.onclick=()=>{document.querySelectorAll('.tab').forEach(x=>x.setAttribute('aria-selected',x===t));document.querySelectorAll('[data-pane]').forEach(p=>p.hidden=p.dataset.pane!==t.dataset.tab)});
+
+/* ---------- images ---------- */
+async function toJpeg(file,max=1600,q=.85){
+  const bmp=await createImageBitmap(file);
+  const s=Math.min(1,max/Math.max(bmp.width,bmp.height));
+  const c=document.createElement('canvas');c.width=Math.round(bmp.width*s);c.height=Math.round(bmp.height*s);
+  const x=c.getContext('2d');x.fillStyle='#fff';x.fillRect(0,0,c.width,c.height);x.drawImage(bmp,0,0,c.width,c.height);
+  return await new Promise(r=>c.toBlob(r,'image/jpeg',q));
+}
+async function addImages(files,dir){
+  const out=[];
+  for(const f of files){
+    if(!/^image\//.test(f.type)){toast('Пропущен файл «'+f.name+'»: это не картинка. Экспортируйте его в PNG или JPG.',true);continue}
+    try{const blob=await toJpeg(f);const path=`media/${dir}/${uid()}.jpg`;PENDING.set(path,{blob,url:URL.createObjectURL(blob)});out.push({path,name:f.name})}
+    catch(e){toast('Не удалось прочитать «'+f.name+'»',true)}
+  }
+  return out;
+}
+
+/* ---------- works editor ---------- */
+function count(p){return (p.items||[]).reduce((a,it)=>a+((it.slides&&it.slides.length)||1),0)}
+function renderAll(){renderProjects();renderReels()}
+function renderProjects(){
+  const P=DATA.projects;
+  $('#projects').innerHTML=P.map((p,pi)=>`
+  <div class="panel proj" data-pi="${pi}">
+    <div class="proj-top">
+      <label>Название проекта<input data-f="title" value="${esc(p.title)}"></label>
+      <label>Вид<select data-f="layout"><option value="grid"${p.layout!=='carousels'?' selected':''}>Сетка</option><option value="carousels"${p.layout==='carousels'?' selected':''}>Карусели</option></select></label>
+      <label>Колонки<select data-f="cols"><option value="3"${p.cols!=4?' selected':''}>3</option><option value="4"${p.cols==4?' selected':''}>4</option></select></label>
+      <div class="acts"><button class="btn ghost icon" type="button" data-a="up" aria-label="Проект выше">↑</button><button class="btn ghost icon" type="button" data-a="down" aria-label="Проект ниже">↓</button><button class="btn danger icon" type="button" data-a="del" aria-label="Удалить проект">✕</button></div>
+    </div>
+    <label class="note">Описание<textarea data-f="note" rows="2">${esc(p.note||'')}</textarea></label>
+    <div class="hint" style="margin-top:8px">${count(p)} изображений · ${p.items.length} работ</div>
+    <div class="items">${(p.items||[]).map((it,ii)=>{const s=it.slides&&it.slides.length?it.slides:[it.src];const isNew=s.some(x=>PENDING.has(x));return `
+      <div class="item" data-ii="${ii}">
+        <div class="thumb"><img src="${esc(imgURL(s[0]))}" alt="" loading="lazy">${s.length>1?`<span class="badge">${s.length} слайдов</span>`:''}${isNew?'<span class="badge new">новое</span>':''}</div>
+        <div class="fields">
+          <input data-if="title" value="${esc(it.title)}" placeholder="Название" aria-label="Название работы">
+          <input data-if="tag" value="${esc(it.tag||'')}" placeholder="Тег (Логотип, Баннер…)" aria-label="Тег">
+          <div class="row"><button class="btn ghost icon" type="button" data-ia="left" aria-label="Левее">←</button><button class="btn ghost icon" type="button" data-ia="right" aria-label="Правее">→</button><button class="btn danger icon" type="button" data-ia="del" aria-label="Удалить работу">✕</button></div>
+        </div>
+      </div>`}).join('')}</div>
+    <div class="add-row">
+      <label class="btn sm" style="flex-direction:row;text-transform:none;letter-spacing:0;color:#0a0a0a">+ Добавить работы<input type="file" accept="image/*" multiple hidden data-add="single"></label>
+      <label class="btn ghost sm" style="flex-direction:row;text-transform:none;letter-spacing:0">+ Добавить карусель<input type="file" accept="image/*" multiple hidden data-add="carousel"></label>
+    </div>
+    <p class="hint" style="margin:8px 0 0">«Добавить работы» — каждая картинка станет отдельной работой. «Добавить карусель» — все выбранные картинки станут одной листаемой работой.</p>
+  </div>`).join('')||'<div class="panel hint">Проектов пока нет. Нажмите «Новый проект».</div>';
+}
+$('#projects').addEventListener('input',e=>{
+  const pe=e.target.closest('.proj');if(!pe)return;const p=DATA.projects[+pe.dataset.pi];
+  if(e.target.dataset.f){const f=e.target.dataset.f;p[f]=f==='cols'?+e.target.value:e.target.value;setDirty(true)}
+  if(e.target.dataset.if){const it=p.items[+e.target.closest('.item').dataset.ii];it[e.target.dataset.if]=e.target.value;setDirty(true)}
+});
+$('#projects').addEventListener('change',async e=>{
+  const inp=e.target;if(!inp.dataset.add)return;
+  const pe=inp.closest('.proj');const p=DATA.projects[+pe.dataset.pi];
+  const files=[...inp.files];inp.value='';if(!files.length)return;
+  toast('Обрабатываю '+files.length+' файл(ов)…');
+  const dir=translit(p.id||p.title);
+  const added=await addImages(files,dir);if(!added.length)return;
+  if(inp.dataset.add==='carousel')p.items.push({title:fileTitle(added[0].name),tag:'Карусель',slides:added.map(a=>a.path)});
+  else added.forEach(a=>p.items.push({src:a.path,title:fileTitle(a.name),tag:''}));
+  setDirty(true);renderProjects();toast('Добавлено: '+added.length+'. Не забудьте нажать «Сохранить и опубликовать».');
+});
+$('#projects').addEventListener('click',async e=>{
+  const b=e.target.closest('button');if(!b)return;const pe=b.closest('.proj');const pi=+pe.dataset.pi;const P=DATA.projects;
+  if(b.dataset.a==='up'&&pi>0){[P[pi-1],P[pi]]=[P[pi],P[pi-1]]}
+  else if(b.dataset.a==='down'&&pi<P.length-1){[P[pi+1],P[pi]]=[P[pi],P[pi+1]]}
+  else if(b.dataset.a==='del'){if(!await confirmBox('Удалить проект «'+P[pi].title+'» со всеми работами?'))return;P.splice(pi,1)}
+  else if(b.dataset.ia){const it=P[pi].items;const ii=+b.closest('.item').dataset.ii;
+    if(b.dataset.ia==='left'&&ii>0)[it[ii-1],it[ii]]=[it[ii],it[ii-1]];
+    else if(b.dataset.ia==='right'&&ii<it.length-1)[it[ii+1],it[ii]]=[it[ii],it[ii+1]];
+    else if(b.dataset.ia==='del'){if(!await confirmBox('Удалить работу «'+(it[ii].title||'без названия')+'»?'))return;it.splice(ii,1)}
+    else return;}
+  else return;
+  setDirty(true);renderProjects();
+});
+$('#addProject').onclick=()=>{
+  const title='Новый проект';let id=translit(title)+'-'+uid().slice(-4);
+  DATA.projects.unshift({id,title,note:'',layout:'grid',cols:3,items:[]});setDirty(true);renderProjects();
+  window.scrollTo({top:0,behavior:'smooth'});setTimeout(()=>{const i=document.querySelector('.proj input[data-f="title"]');i&&i.select()},300);
+};
+
+/* ---------- reels ---------- */
+function renderReels(){
+  $('#reels').innerHTML=(DATA.reels||[]).map((r,ri)=>`
+  <div class="item reel" data-ri="${ri}">
+    <div class="thumb">${r.poster?`<img src="${esc(imgURL(r.poster))}" alt="">`:`<video src="${esc(imgURL(r.src))}" muted></video>`}${PENDING.has(r.src)?'<span class="badge new">новое</span>':''}</div>
+    <div class="fields">
+      <input data-rf="title" value="${esc(r.title)}" placeholder="Название" aria-label="Название ролика">
+      <input data-rf="tag" value="${esc(r.tag||'')}" placeholder="Тег" aria-label="Тег ролика">
+      <div class="row"><button class="btn ghost icon" type="button" data-ra="left" aria-label="Левее">←</button><button class="btn ghost icon" type="button" data-ra="right" aria-label="Правее">→</button><button class="btn danger icon" type="button" data-ra="del" aria-label="Удалить ролик">✕</button></div>
+    </div>
+  </div>`).join('')||'<p class="hint">Роликов пока нет.</p>';
+}
+$('#reels').addEventListener('input',e=>{const el=e.target;if(!el.dataset.rf)return;DATA.reels[+el.closest('.reel').dataset.ri][el.dataset.rf]=el.value;setDirty(true)});
+$('#reels').addEventListener('click',async e=>{const b=e.target.closest('button');if(!b)return;const R=DATA.reels;const ri=+b.closest('.reel').dataset.ri;
+  if(b.dataset.ra==='left'&&ri>0)[R[ri-1],R[ri]]=[R[ri],R[ri-1]];
+  else if(b.dataset.ra==='right'&&ri<R.length-1)[R[ri+1],R[ri]]=[R[ri],R[ri+1]];
+  else if(b.dataset.ra==='del'){if(!await confirmBox('Удалить ролик «'+R[ri].title+'»?'))return;R.splice(ri,1)}else return;
+  setDirty(true);renderReels()});
+function posterOf(file){return new Promise(res=>{const v=document.createElement('video');v.muted=true;v.playsInline=true;v.preload='auto';v.src=URL.createObjectURL(file);
+  v.onloadeddata=()=>{v.currentTime=Math.min(1,(v.duration||2)/2)};
+  v.onseeked=()=>{const w=360,h=640,c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d');x.fillStyle='#000';x.fillRect(0,0,w,h);const s=Math.max(w/v.videoWidth,h/v.videoHeight);const dw=v.videoWidth*s,dh=v.videoHeight*s;x.drawImage(v,(w-dw)/2,(h-dh)/2,dw,dh);c.toBlob(b=>res(b),'image/jpeg',.8)};
+  v.onerror=()=>res(null)})}
+$('#reelInput').addEventListener('change',async e=>{
+  const files=[...e.target.files];e.target.value='';DATA.reels=DATA.reels||[];
+  for(const f of files){
+    if(f.size>45*1024*1024){toast('«'+f.name+'» больше 45 МБ — сожмите видео.',true);continue}
+    if(f.size>20*1024*1024)toast('«'+f.name+'» большой, сайт будет грузиться медленнее.');
+    const id=uid();const ext=(f.name.split('.').pop()||'mp4').toLowerCase();
+    const vp=`media/reels/${id}.${ext}`;PENDING.set(vp,{blob:f,url:URL.createObjectURL(f)});
+    const pb=await posterOf(f);let pp='';if(pb){pp=`media/reels/${id}.jpg`;PENDING.set(pp,{blob:pb,url:URL.createObjectURL(pb)})}
+    DATA.reels.unshift({src:vp,poster:pp,title:fileTitle(f.name),tag:''});
+  }
+  setDirty(true);renderReels();
+});
+
+/* ---------- save ---------- */
+function referenced(){const s=new Set();(DATA.projects||[]).forEach(p=>(p.items||[]).forEach(it=>{(it.slides||[]).forEach(x=>s.add(x));it.src&&s.add(it.src)}));(DATA.reels||[]).forEach(r=>{s.add(r.src);r.poster&&s.add(r.poster)});return s}
+function progress(title){$('#progressBox').hidden=false;$('#progressTitle').textContent=title;$('#bar').style.width='0';$('#log').textContent=''}
+function logLine(t){const l=$('#log');l.textContent+=t+'\n';l.scrollTop=l.scrollHeight}
+$('#saveBtn').onclick=async()=>{
+  const btn=$('#saveBtn');btn.disabled=true;btn.textContent='Публикую…';
+  try{
+    DATA.projects.forEach(p=>{if(!p.id)p.id=translit(p.title)});
+    const used=referenced();const files=[];
+    for(const [path,f] of PENDING){if(used.has(path))files.push({path,base64:await b64FromBlob(f.blob)})}
+    DATA.updated=new Date().toISOString();
+    files.push({path:DATA_PATH,base64:b64FromText(JSON.stringify(DATA,null,1))});
+    progress('Публикация изменений');
+    await commit(files,'Обновление портфолио через админку',(i,n,p)=>{$('#bar').style.width=(i/n*100)+'%';logLine('✓ '+p)});
+    PENDING.clear();setDirty(false);renderAll();
+    logLine('Готово. Сайт обновится примерно через 1–2 минуты.');toast('Опубликовано! Сайт обновится через 1–2 минуты.');
+  }catch(e){logLine('Ошибка: '+e.message);toast(e.status===409?'Кто-то изменил сайт одновременно с вами. Обновите страницу и повторите.':'Не удалось опубликовать: '+e.message,true);btn.disabled=false}
+  finally{btn.textContent='Сохранить и опубликовать'}
+};
+addEventListener('beforeunload',e=>{if(dirty){e.preventDefault();e.returnValue=''}});
+
+/* ---------- bulk upload ---------- */
+let BULK=[];
+$('#dirInput').addEventListener('change',e=>{
+  BULK=[...e.target.files].filter(f=>!/(^|\/)\.[^/]+/.test(f.webkitRelativePath)&&!/Thumbs\.db$/i.test(f.name));
+  const size=BULK.reduce((a,f)=>a+f.size,0);
+  const top=BULK[0]?BULK[0].webkitRelativePath.split('/')[0]:'';
+  $('#dirInfo').textContent=BULK.length?`Папка «${top}»: ${BULK.length} файлов, ${(size/1048576).toFixed(1)} МБ`:'Папка пустая';
+  const big=BULK.find(f=>f.size>50*1024*1024);if(big){toast('Файл «'+big.name+'» больше 50 МБ — GitHub его не примет.',true)}
+  $('#bulkBtn').disabled=!BULK.length||!!big;
+});
+$('#bulkBtn').onclick=async()=>{
+  if(!await confirmBox(`Загрузить ${BULK.length} файлов в репозиторий? Файлы с такими же именами будут заменены.`))return;
+  const btn=$('#bulkBtn');btn.disabled=true;progress('Загрузка сайта');
+  try{
+    const files=[];let i=0;
+    for(const f of BULK){const parts=f.webkitRelativePath.split('/');parts.shift();files.push({path:parts.join('/'),base64:await b64FromBlob(f)});$('#bar').style.width=(++i/BULK.length*30)+'%'}
+    await commit(files,'Загрузка сайта из папки',(k,n,p)=>{$('#bar').style.width=(30+k/n*70)+'%';logLine('✓ '+p)});
+    logLine('Готово! Сайт появится через 1–2 минуты.');toast('Сайт загружен!');
+    DATA=await loadData();PENDING.clear();setDirty(false);renderAll();
+  }catch(e){logLine('Ошибка: '+e.message);toast('Не удалось загрузить: '+e.message,true)}
+  finally{btn.disabled=false}
+};
+</script>
+</body>
+</html>
