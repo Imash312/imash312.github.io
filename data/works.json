@@ -75,55 +75,6 @@
    ]
   },
   {
-   "id": "elcorazon-web",
-   "title": "El Corazon — сайт и рассылки",
-   "note": "Баннеры интернет-магазина, категории, превью для ссылок, шапка рассылки и подпись письма.",
-   "layout": "grid",
-   "cols": 3,
-   "items": [
-    {
-     "src": "media/elcorazon/site_hero_1920x600.jpg",
-     "title": "Главный баннер",
-     "tag": "Сайт"
-    },
-    {
-     "src": "media/elcorazon/site_kategoriya_gel_laki_600x400.jpg",
-     "title": "Категория «Гель-лаки»",
-     "tag": "Сайт"
-    },
-    {
-     "src": "media/elcorazon/site_kategoriya_stemping_600x400.jpg",
-     "title": "Категория «Стемпинг»",
-     "tag": "Сайт"
-    },
-    {
-     "src": "media/elcorazon/site_kategoriya_uhod_600x400.jpg",
-     "title": "Категория «Уход»",
-     "tag": "Сайт"
-    },
-    {
-     "src": "media/elcorazon/site_og_1200x630.jpg",
-     "title": "Превью для ссылок",
-     "tag": "Сайт"
-    },
-    {
-     "src": "media/elcorazon/site_promo_stemping_1200x300.jpg",
-     "title": "Промо-баннер",
-     "tag": "Сайт"
-    },
-    {
-     "src": "media/elcorazon/site_shapka_rassylki_1200x400.jpg",
-     "title": "Шапка рассылки",
-     "tag": "Сайт"
-    },
-    {
-     "src": "media/elcorazon/site_podpis_pisma_SHABLON_600x150.jpg",
-     "title": "Подпись письма",
-     "tag": "Сайт"
-    }
-   ]
-  },
-  {
    "id": "nadezhda",
    "title": "МРОМ «Надежда»",
    "note": "Религиозная организация в Москве: листовки, плакаты к праздникам, X-баннеры, сертификаты, бланк и материалы волонтёрского движения ДЕМ.",
@@ -567,5 +518,5 @@
    "tag": "Моушн-дизайн"
   }
  ],
- "updated": "2026-11-17T18:06:57.119Z"
+ "updated": "2026-11-17T18:08:10.637Z"
 }
