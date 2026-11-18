@@ -11,7 +11,7 @@
 <title>Ыманалы Нуркамалов — портфолио</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Manrope:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap">
 <style>
 /* Layout: one dark stage — flame-lit hero, filterable work wall, phone-frame reels, short CV, contacts */
 :root{
@@ -164,6 +164,32 @@ section.block{padding-block:72px;border-top:1px solid var(--line)}
 .timeline p{margin:0;color:var(--mute);font-size:14px}
 @media (max-width:820px){.about{grid-template-columns:1fr;gap:32px}}
 
+/* religious education */
+.faith{position:relative;overflow:hidden;border-block:1px solid var(--line);background:radial-gradient(80% 60% at 85% 0%,rgba(244,149,35,.10),transparent 60%),var(--ink)}
+.faith::before{content:"";position:absolute;inset:0;opacity:.07;pointer-events:none;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='72' height='72' viewBox='0 0 60 60'><g fill='none' stroke='%23F49523' stroke-width='1'><rect x='15' y='15' width='30' height='30'/><rect x='15' y='15' width='30' height='30' transform='rotate(45 30 30)'/><circle cx='30' cy='30' r='7'/></g></svg>");background-size:72px}
+.faith .wrap{position:relative;display:grid;grid-template-columns:1.25fr .75fr;gap:48px;align-items:center}
+.faith .bism{text-align:left;font-family:"Amiri",serif;font-size:clamp(26px,3.4vw,36px);color:var(--flame);direction:rtl;line-height:1.3;margin-bottom:10px}
+.faith h2{font-size:clamp(26px,3.6vw,40px);margin:8px 0 16px}
+.faith p{color:#d4d4d4;max-width:62ch}
+.faith .facts{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin:22px 0}
+.faith .facts div{background:var(--ink-2);box-shadow:inset 0 0 0 1px var(--line);border-radius:var(--leaf);padding:14px 16px}
+.faith .facts b{display:block;font-family:var(--display);font-size:18px;color:var(--flame)}
+.faith .facts span{font-size:13px;color:var(--mute)}
+.subj{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin:0;padding:0;list-style:none}
+.subj li{text-align:center;padding:14px 6px 12px;background:var(--ink-2);box-shadow:inset 0 0 0 1px var(--line);border-radius:60px 60px 8px 8px;transition:box-shadow .25s,transform .25s}
+.subj li:hover{box-shadow:inset 0 0 0 1.5px var(--flame);transform:translateY(-3px)}
+.subj .ar{font-family:"Amiri",serif;font-size:22px;color:var(--flame);line-height:1.2;direction:rtl}
+.subj b{display:block;font-size:13px;margin-top:4px}
+.certcard{position:relative;display:block;width:100%;border:0;padding:0;cursor:zoom-in;background:none;border-radius:var(--leaf);overflow:hidden;box-shadow:0 0 0 1px var(--line),0 30px 60px -30px rgba(244,149,35,.45);transition:transform .3s,box-shadow .3s}
+.certcard:hover{transform:translateY(-4px) rotate(-.5deg);box-shadow:0 0 0 1.5px var(--flame),0 30px 60px -24px rgba(244,149,35,.6)}
+.certcard img{width:100%;height:auto}
+.certcard .seal{position:absolute;left:12px;bottom:12px;display:flex;align-items:center;gap:8px;background:rgba(10,10,10,.85);backdrop-filter:blur(6px);padding:9px 14px;border-radius:var(--leaf);font:700 13px/1.2 var(--body);color:var(--paper);text-align:left}
+.certcard .seal span{color:var(--flame);display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase}
+.faith .ayah{margin-top:22px;color:var(--mute);font-size:14px}
+.faith .ayah .ar{font-family:"Amiri",serif;font-size:22px;color:var(--paper);margin-right:10px}
+@media (max-width:900px){.faith .wrap{grid-template-columns:1fr;gap:32px}.subj{grid-template-columns:repeat(3,1fr)}.certcard{max-width:420px;margin:0 auto}}
+@media (max-width:480px){.faith .facts{grid-template-columns:1fr 1fr}.faith .facts div:last-child{grid-column:1/-1}}
+
 /* contact */
 .contact{text-align:center;padding-block:90px}
 .contact h2{font-size:clamp(32px,6vw,68px);font-weight:800}
@@ -233,6 +259,7 @@ dialog.lb .btn{padding:11px 16px}
       <li><a href="#p-insta">Instagram</a></li>
       <li><a href="#reels">Видео</a></li>
       <li><a href="#about">Обо мне</a></li>
+      <li><a href="#faith">Религиозное образование</a></li>
       <li><a href="#contact">Контакты</a></li>
     </ul>
     <a class="btn" href="#contact"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h16M14 6l6 6-6 6"/></svg>Связаться</a>
@@ -305,6 +332,35 @@ dialog.lb .btn{padding:11px 16px}
         <li><div class="yr">2007 – 2011</div><h3>Компьютерный дизайнер</h3><p>Колледж, среднее профессиональное образование</p></li>
       </ol>
     </div>
+  </div>
+</section>
+
+<section class="block faith" id="faith">
+  <div class="wrap">
+    <div>
+      <div class="bism" lang="ar">بِسْمِ ٱللَّٰهِ ٱلرَّحْمَٰنِ ٱلرَّحِيمِ</div>
+      <div class="eyebrow">Религиозное образование</div>
+      <h2>Исламские науки и преподавание</h2>
+      <p>Окончил трёхлетний курс исламских наук при местной религиозной организации мусульман «Надежда» г. Москвы (ханафитский мазхаб) и получил сертификат с разрешением преподавать изученные предметы. В той же организации веду религиозные занятия по субботам и воскресеньям: планирую, готовлю и провожу уроки, объясняю материал понятно и последовательно.</p>
+      <div class="facts">
+        <div><b>3 года</b><span>обучения</span></div>
+        <div><b>№14</b><span>сертификат, 29.05.2026</span></div>
+        <div><b>Сб · Вс</b><span>веду занятия</span></div>
+      </div>
+      <ul class="subj" aria-label="Изученные науки">
+        <li><div class="ar" lang="ar">القرآن</div><b>Коран</b></li>
+        <li><div class="ar" lang="ar">التجويد</div><b>Таджвид</b></li>
+        <li><div class="ar" lang="ar">العقيدة</div><b>Акыда</b></li>
+        <li><div class="ar" lang="ar">الفقه</div><b>Фикх</b></li>
+        <li><div class="ar" lang="ar">الحديث</div><b>Хадис</b></li>
+        <li><div class="ar" lang="ar">السيرة</div><b>Сира</b></li>
+      </ul>
+      <p class="ayah"><span class="ar" lang="ar">رَّبِّ زِدْنِي عِلْمًا</span>«Господи, приумножь мои знания» (20:114)</p>
+    </div>
+    <button class="certcard" type="button" id="certOpen" aria-label="Открыть страницу о религиозном образовании">
+      <img src="media/religion/certificate-page.jpg" alt="Религиозное образование: МРОМ «Надежда», сертификат №14" width="1131" height="1600" loading="lazy">
+      <span class="seal"><svg width="26" height="26" viewBox="0 0 100 100" aria-hidden="true"><polygon points="50,4 61,23 82,18 77,39 96,50 77,61 82,82 61,77 50,96 39,77 18,82 23,61 4,50 23,39 18,18 39,23" fill="#F49523"/><circle cx="50" cy="50" r="22" fill="#0a0a0a"/></svg><div><span>МРОМ «Надежда»</span>Сертификат №14</div></span>
+    </button>
   </div>
 </section>
 
@@ -387,6 +443,7 @@ lb.addEventListener('keydown',e=>{if(e.key==='ArrowRight')step(1);if(e.key==='Ar
 /* copy */
 const toast=document.getElementById('toast');
 function say(t){toast.textContent=t;toast.classList.add('on');clearTimeout(say.t);say.t=setTimeout(()=>toast.classList.remove('on'),1800)}
+document.getElementById('certOpen').addEventListener('click',()=>openList([{src:'media/religion/certificate-page.jpg',title:'Религиозное образование',tag:'МРОМ «Надежда» · Сертификат №14'}],0));
 document.querySelectorAll('[data-copy]').forEach(b=>b.addEventListener('click',()=>{
   const v=b.dataset.copy;
   navigator.clipboard?.writeText(v).then(()=>say('Скопировано: '+v)).catch(()=>{const s=getSelection(),r=document.createRange();r.selectNodeContents(b.closest('.crow').querySelector('.val'));s.removeAllRanges();s.addRange(r);say('Выделено — нажмите Ctrl+C')});
